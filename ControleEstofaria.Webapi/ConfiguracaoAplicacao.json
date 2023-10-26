@@ -1,0 +1,11 @@
+﻿{
+  "VersaoSistema": "1.0",
+
+  "ConfiguracaoLogs": {
+    "DiretorioSaida": "C:\\logs\\ControleEstofaria"
+  },
+
+  "ConnectionStrings": {
+    "SqlServer": "Data Source=(LocalDB)\\MSSqlLocalDB;Initial Catalog=ControleEstofariaOrm;Integrated Security=True"
+  }
+}

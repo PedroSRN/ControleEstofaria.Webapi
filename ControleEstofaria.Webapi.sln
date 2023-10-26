@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleEstofaria.Webapi", "ControleEstofaria.Webapi\ControleEstofaria.Webapi.csproj", "{089764D7-93B1-4AFA-A8C7-34B979656E50}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA} = {35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Distribuição_API", "1- Distribuição_API", "{01D83F54-1D56-4787-8631-72A99D2149B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Dominio", "3- Dominio", "{84208896-4AB7-4652-9CDA-352B73202206}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleEstofaria.Dominio", "ControleEstofaria.Dominio\ControleEstofaria.Dominio.csproj", "{7A12C6DF-72B7-40B5-A613-80DC6622A15D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Infra", "4- Infra", "{C4B95660-C2B3-4882-9423-82D4BBA707B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{04EC0384-2913-4331-9721-83C9DB0A8F18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleEstofaria.Infra.Configs", "ControleEstofaria.Infra.Configs\ControleEstofaria.Infra.Configs.csproj", "{789F495C-2531-44AB-A139-1E2CB630D393}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logs", "Logs", "{B71582E3-FFA1-4B57-9277-3AE97B5EA2F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleEstofaria.Infra.Logging", "ControleEstofaria.Infra.Logs\ControleEstofaria.Infra.Logging.csproj", "{8F68F120-5B93-405F-98F3-8CB380FEFE1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orm", "Orm", "{CB3FAB1B-5BB0-4251-A814-89AB337DC4F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleEstofaria.Orm", "ControleEstofaria.Orm\ControleEstofaria.Orm.csproj", "{859CADF5-F511-4A1F-BA97-EE72EB2C7AC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Aplicação", "2- Aplicação", "{35432BD0-A4C0-4895-B678-30A5ED14D4AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleEstofaria.Aplicacao", "ControleEstofaria.Aplicacao\ControleEstofaria.Aplicacao.csproj", "{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{089764D7-93B1-4AFA-A8C7-34B979656E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089764D7-93B1-4AFA-A8C7-34B979656E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089764D7-93B1-4AFA-A8C7-34B979656E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089764D7-93B1-4AFA-A8C7-34B979656E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A12C6DF-72B7-40B5-A613-80DC6622A15D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A12C6DF-72B7-40B5-A613-80DC6622A15D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A12C6DF-72B7-40B5-A613-80DC6622A15D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A12C6DF-72B7-40B5-A613-80DC6622A15D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789F495C-2531-44AB-A139-1E2CB630D393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789F495C-2531-44AB-A139-1E2CB630D393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789F495C-2531-44AB-A139-1E2CB630D393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789F495C-2531-44AB-A139-1E2CB630D393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F68F120-5B93-405F-98F3-8CB380FEFE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F68F120-5B93-405F-98F3-8CB380FEFE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F68F120-5B93-405F-98F3-8CB380FEFE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F68F120-5B93-405F-98F3-8CB380FEFE1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859CADF5-F511-4A1F-BA97-EE72EB2C7AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859CADF5-F511-4A1F-BA97-EE72EB2C7AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859CADF5-F511-4A1F-BA97-EE72EB2C7AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859CADF5-F511-4A1F-BA97-EE72EB2C7AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{089764D7-93B1-4AFA-A8C7-34B979656E50} = {01D83F54-1D56-4787-8631-72A99D2149B1}
+		{7A12C6DF-72B7-40B5-A613-80DC6622A15D} = {84208896-4AB7-4652-9CDA-352B73202206}
+		{04EC0384-2913-4331-9721-83C9DB0A8F18} = {C4B95660-C2B3-4882-9423-82D4BBA707B1}
+		{789F495C-2531-44AB-A139-1E2CB630D393} = {04EC0384-2913-4331-9721-83C9DB0A8F18}
+		{B71582E3-FFA1-4B57-9277-3AE97B5EA2F7} = {C4B95660-C2B3-4882-9423-82D4BBA707B1}
+		{8F68F120-5B93-405F-98F3-8CB380FEFE1A} = {B71582E3-FFA1-4B57-9277-3AE97B5EA2F7}
+		{CB3FAB1B-5BB0-4251-A814-89AB337DC4F4} = {C4B95660-C2B3-4882-9423-82D4BBA707B1}
+		{859CADF5-F511-4A1F-BA97-EE72EB2C7AC6} = {CB3FAB1B-5BB0-4251-A814-89AB337DC4F4}
+		{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA} = {35432BD0-A4C0-4895-B678-30A5ED14D4AE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B28A3BB-8571-48BE-93C0-10C732644228}
+	EndGlobalSection
+EndGlobal
