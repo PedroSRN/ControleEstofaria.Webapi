@@ -1,7 +1,7 @@
 using ControleEstofaria.Infra.Logging;
 using ControleEstofaria.Orm.Compartilhado;
-using ControleEstofaria.Webapi;
 using Serilog;
+
 
 
 namespace ControleEstofaria.Webapi

@@ -3,13 +3,7 @@ using ControleEstofaria.Dominio.Compartilhado;
 using ControleEstofaria.Dominio.ModuloCliente;
 using FluentResults;
 using FluentValidation.Results;
-using Microsoft.AspNetCore.Identity;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ControleEstofaria.Aplicacao.ModuloCliente
 {
@@ -18,7 +12,8 @@ namespace ControleEstofaria.Aplicacao.ModuloCliente
         public IRepositorioCliente repositorioCliente;
         public IContextoPersistencia contextoPersistencia;
 
-        public ServicoCliente(IRepositorioCliente repositorioCliente, IContextoPersistencia contexto)
+        public ServicoCliente(IRepositorioCliente repositorioCliente, 
+                                IContextoPersistencia contexto)
         {
             this.repositorioCliente = repositorioCliente;
             this.contextoPersistencia = contexto;
@@ -188,7 +183,7 @@ namespace ControleEstofaria.Aplicacao.ModuloCliente
              foreach (ValidationFailure item in resultadoValidacao.Errors)
                  erros.Add(new Error(item.ErrorMessage));
 
-             if (NumeroCNPJDuplicado(arg))
+            if (NumeroCNPJDuplicado(arg))
                  erros.Add(new Error("CNPJ do cliente está duplicado"));
 
             if (EmailDuplicado(arg))
@@ -201,20 +196,20 @@ namespace ControleEstofaria.Aplicacao.ModuloCliente
          }
         private bool NumeroCNPJDuplicado(Cliente arg)
         {
-            var filmeEncontrado = repositorioCliente.SelecionarCNPJ(arg.CNPJ);
+            var cnpjEncontrado = repositorioCliente.SelecionarCNPJ(arg.CNPJ);
 
-            return filmeEncontrado != null &&
-                   filmeEncontrado.CNPJ == arg.CNPJ &&
-                   filmeEncontrado.Id != arg.Id;
+            return cnpjEncontrado != null &&
+                   cnpjEncontrado.CNPJ == arg.CNPJ &&
+                   cnpjEncontrado.Id != arg.Id;
         }
 
         private bool EmailDuplicado(Cliente arg)
         {
-            var filmeEncontrado = repositorioCliente.SelecionarEmail(arg.Email);
+            var emailEncontrado = repositorioCliente.SelecionarEmail(arg.Email);
 
-            return filmeEncontrado != null &&
-                   filmeEncontrado.Email == arg.Email &&
-                   filmeEncontrado.Id != arg.Id;
+            return emailEncontrado != null &&
+                   emailEncontrado.Email == arg.Email &&
+                   emailEncontrado.Id != arg.Id;
         }
     }
 

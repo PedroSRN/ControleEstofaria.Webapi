@@ -10,7 +10,8 @@ using ControleEstofaria.Orm.Compartilhado;
 using ControleEstofaria.Orm.ModuloCliente;
 using ControleEstofaria.Orm.ModuloFinanca;
 using ControleEstofaria.Orm.ModuloServico;
-using System.Runtime.CompilerServices;
+
+
 
 namespace ControleEstofaria.Webapi.Config
 {

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ControleEstofaria.Aplicacao.ModuloAutenticacao;
 using ControleEstofaria.Dominio.ModuloAutenticacao;
+using ControleEstofaria.Webapi.Controllers.Compartilhado;
 using ControleEstofaria.Webapi.ViewModels.ModuloAutenticacao;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -8,7 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace ControleEstofaria.Webapi.Controllers.Compartilhado
+namespace ControleEstofaria.Webapi.Controllers
 {
     [Route("api/conta")]
     [ApiController]

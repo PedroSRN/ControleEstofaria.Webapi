@@ -30,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleEstofaria.Orm", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Aplicação", "2- Aplicação", "{35432BD0-A4C0-4895-B678-30A5ED14D4AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleEstofaria.Aplicacao", "ControleEstofaria.Aplicacao\ControleEstofaria.Aplicacao.csproj", "{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleEstofaria.Aplicacao", "ControleEstofaria.Aplicacao\ControleEstofaria.Aplicacao.csproj", "{35FF6DC7-73EC-4B20-A8C4-2EDE6CCF5CBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
