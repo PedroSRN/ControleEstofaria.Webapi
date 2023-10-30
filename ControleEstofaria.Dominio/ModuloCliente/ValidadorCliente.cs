@@ -12,17 +12,16 @@ namespace ControleEstofaria.Dominio.ModuloCliente
 
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage("O campo email é obrigatório")
-                .NotNull().WithMessage("O campo email é obrigatório")
-                .NotEqual(x => x.Email); // verificar se não vai bugar a incersão 
+                .NotNull().WithMessage("O campo email é obrigatório");
+
 
             RuleFor(x => x.Telefone)
                 .NotEmpty().WithMessage("O campo telefone é obrigatório")
                 .NotNull().WithMessage("O campo telefone é obrigatório");
 
-            RuleFor(x => x.CNPJ) 
+            RuleFor(x => x.CNPJ)
                 .NotEmpty().WithMessage("O campo CNPJ é obrigatório")
-                .NotNull().WithMessage("O campo CNPJ é obrigatório")
-                .NotEqual(x => x.CNPJ); // verificar se não vai bugar a incersão 
+                .NotNull().WithMessage("O campo CNPJ é obrigatório");
 
         }
     }
