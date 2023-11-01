@@ -1,14 +1,11 @@
 ﻿using ControleEstofaria.Aplicacao.ModuloCliente;
-using ControleEstofaria.Aplicacao.ModuloFinanca;
 using ControleEstofaria.Aplicacao.ModuloServico;
 using ControleEstofaria.Dominio.Compartilhado;
 using ControleEstofaria.Dominio.ModuloCliente;
-using ControleEstofaria.Dominio.ModuloFinanca;
 using ControleEstofaria.Dominio.ModuloServico;
 using ControleEstofaria.Infra.Configs;
 using ControleEstofaria.Orm.Compartilhado;
 using ControleEstofaria.Orm.ModuloCliente;
-using ControleEstofaria.Orm.ModuloFinanca;
 using ControleEstofaria.Orm.ModuloServico;
 
 
@@ -30,9 +27,6 @@ namespace ControleEstofaria.Webapi.Config
 
             services.AddScoped<IRepositorioServico, RepositorioServicoOrm>();
             services.AddTransient<ServicoServico>();
-
-            services.AddScoped<IRepositorioFinanca, RepositorioFinancaOrm>();
-            services.AddTransient<ServicoFinanca>();
 
         }
     }

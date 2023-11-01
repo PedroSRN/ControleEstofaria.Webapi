@@ -17,7 +17,7 @@ namespace ControleEstofaria.Orm.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.12")
+                .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -116,24 +116,6 @@ namespace ControleEstofaria.Orm.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TBCliente", (string)null);
-                });
-
-            modelBuilder.Entity("ControleEstofaria.Dominio.ModuloFinanca.Financa", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("Saldo")
-                        .HasColumnType("decimal(10, 2)");
-
-                    b.Property<Guid>("ServicoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ServicoId");
-
-                    b.ToTable("TBFinanca", (string)null);
                 });
 
             modelBuilder.Entity("ControleEstofaria.Dominio.ModuloServico.Servico", b =>
@@ -305,17 +287,6 @@ namespace ControleEstofaria.Orm.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ControleEstofaria.Dominio.ModuloFinanca.Financa", b =>
-                {
-                    b.HasOne("ControleEstofaria.Dominio.ModuloServico.Servico", "Servico")
-                        .WithMany("Financas")
-                        .HasForeignKey("ServicoId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Servico");
-                });
-
             modelBuilder.Entity("ControleEstofaria.Dominio.ModuloServico.Servico", b =>
                 {
                     b.HasOne("ControleEstofaria.Dominio.ModuloCliente.Cliente", "Cliente")
@@ -381,11 +352,6 @@ namespace ControleEstofaria.Orm.Migrations
             modelBuilder.Entity("ControleEstofaria.Dominio.ModuloCliente.Cliente", b =>
                 {
                     b.Navigation("Servicos");
-                });
-
-            modelBuilder.Entity("ControleEstofaria.Dominio.ModuloServico.Servico", b =>
-                {
-                    b.Navigation("Financas");
                 });
 #pragma warning restore 612, 618
         }

@@ -23,7 +23,7 @@ namespace ControleEstofaria.Aplicacao.ModuloServico
             this.contextoPersistencia = contexto;
         }
 
-        public Result<Servico> Inserindo(Servico servico)
+        public Result<Servico> Inserir(Servico servico)
         {
             Log.Logger.Debug("Tentando inserir Servico... {@s}", servico);
 
@@ -60,7 +60,7 @@ namespace ControleEstofaria.Aplicacao.ModuloServico
 
             var resultado = Validar(servico);
 
-            if (!resultado.IsFailed)
+            if (resultado.IsFailed)
                 return Result.Fail(resultado.Errors);
 
             try

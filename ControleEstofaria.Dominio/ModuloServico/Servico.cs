@@ -1,6 +1,5 @@
 ﻿using ControleEstofaria.Dominio.Compartilhado;
 using ControleEstofaria.Dominio.ModuloCliente;
-using ControleEstofaria.Dominio.ModuloFinanca;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -38,6 +37,7 @@ namespace ControleEstofaria.Dominio.ModuloServico
         public decimal ValorServico { get; set; }
         public FormaPagamentoEnum FormaPagamento { get; set; }
         public StatusServicoEnum StatusServico { get; set; }
+
         public Cliente Cliente
         {
             get { return _cliente; }
@@ -95,7 +95,5 @@ namespace ControleEstofaria.Dominio.ModuloServico
             hash.Add(ClienteId);
             return hash.ToHashCode();
         }
-
-        public List<Financa> Financas { get; set; }
     }
 }

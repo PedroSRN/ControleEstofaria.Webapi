@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ControleEstofaria.Orm.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfiguracaoInicial : Migration
+    public partial class ConfiguraçõesBancoAlterado : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -196,24 +196,6 @@ namespace ControleEstofaria.Orm.Migrations
                         principalColumn: "Id");
                 });
 
-            migrationBuilder.CreateTable(
-                name: "TBFinanca",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Saldo = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
-                    ServicoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TBFinanca", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TBFinanca_TBServico_ServicoId",
-                        column: x => x.ServicoId,
-                        principalTable: "TBServico",
-                        principalColumn: "Id");
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -254,11 +236,6 @@ namespace ControleEstofaria.Orm.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TBFinanca_ServicoId",
-                table: "TBFinanca",
-                column: "ServicoId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TBServico_ClienteId",
                 table: "TBServico",
                 column: "ClienteId");
@@ -283,16 +260,13 @@ namespace ControleEstofaria.Orm.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "TBFinanca");
+                name: "TBServico");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "TBServico");
 
             migrationBuilder.DropTable(
                 name: "TBCliente");
