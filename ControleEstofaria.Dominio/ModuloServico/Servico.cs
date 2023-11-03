@@ -49,7 +49,7 @@ namespace ControleEstofaria.Dominio.ModuloServico
                     ClienteId = _cliente.Id;
             }
         }
-        public Guid ClienteId { get; set; }
+        public Guid? ClienteId { get; set; }
 
         public override void Atualizar(Servico registro)
         {

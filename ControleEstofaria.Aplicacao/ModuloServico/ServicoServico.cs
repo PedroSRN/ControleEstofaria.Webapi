@@ -151,7 +151,6 @@ namespace ControleEstofaria.Aplicacao.ModuloServico
 
         public Result<Servico> SelecionarPorId(Guid id)
         {
-
             Log.Logger.Debug("Tentando selecionar serviço {ServiçoId}...", id);
 
             try

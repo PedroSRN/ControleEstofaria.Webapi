@@ -110,7 +110,7 @@ namespace ControleEstofaria.Aplicacao.ModuloCliente
 
                 string msgErro = "Falha no sistema ao tentar excluir o Cliente";
 
-                if ((bool)(ex.InnerException?.Message?.StartsWith("Cannot insert the value NULL into column 'CLienteId'")))
+                if ((bool)(ex.InnerException?.Message?.StartsWith("Cannot insert the value NULL into column 'ClienteId'")))
                 {
                     msgErro = "Não foi possivel remover este cliente, pois ele está vinculado a um serviço";
                 }
@@ -149,9 +149,9 @@ namespace ControleEstofaria.Aplicacao.ModuloCliente
 
             try
             {
-                var filme = repositorioCliente.SelecionarPorId(id);
+                var cliente = repositorioCliente.SelecionarPorId(id);
 
-                if (filme == null)
+                if (cliente == null)
                 {
                     Log.Logger.Warning("Cliente {ClienteId} não encontrado", id);
 
@@ -160,7 +160,7 @@ namespace ControleEstofaria.Aplicacao.ModuloCliente
 
                 Log.Logger.Information("Cliente {ClienteId} selecionado com sucesso", id);
 
-                return Result.Ok(filme);
+                return Result.Ok(cliente);
             }
             catch (Exception ex)
             {

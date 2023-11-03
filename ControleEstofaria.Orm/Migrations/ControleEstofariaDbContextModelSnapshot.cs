@@ -134,7 +134,7 @@ namespace ControleEstofaria.Orm.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("varchar(2000)");
 
                     b.Property<int>("FormaPagamento")
                         .HasColumnType("int");
@@ -147,7 +147,7 @@ namespace ControleEstofaria.Orm.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("ValorServico")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

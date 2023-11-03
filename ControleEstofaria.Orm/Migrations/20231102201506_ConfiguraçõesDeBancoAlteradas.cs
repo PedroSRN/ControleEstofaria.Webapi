@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ControleEstofaria.Orm.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfiguraçõesBancoAlterado : Migration
+    public partial class ConfiguraçõesDeBancoAlteradas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -178,10 +178,10 @@ namespace ControleEstofaria.Orm.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     NomeServico = table.Column<string>(type: "varchar(200)", nullable: false),
-                    Descricao = table.Column<string>(type: "varchar(200)", nullable: false),
+                    Descricao = table.Column<string>(type: "varchar(2000)", nullable: false),
                     DataEntradaServico = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DataSaidaServico = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ValorServico = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    ValorServico = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     FormaPagamento = table.Column<int>(type: "int", nullable: false),
                     StatusServico = table.Column<int>(type: "int", nullable: false),
                     ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)

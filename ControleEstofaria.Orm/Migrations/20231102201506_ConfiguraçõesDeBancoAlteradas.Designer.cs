@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleEstofaria.Orm.Migrations
 {
     [DbContext(typeof(ControleEstofariaDbContext))]
-    [Migration("20231101021146_Configurações-Banco-Alterado")]
-    partial class ConfiguraçõesBancoAlterado
+    [Migration("20231102201506_ConfiguraçõesDeBancoAlteradas")]
+    partial class ConfiguraçõesDeBancoAlteradas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -137,7 +137,7 @@ namespace ControleEstofaria.Orm.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("varchar(2000)");
 
                     b.Property<int>("FormaPagamento")
                         .HasColumnType("int");
@@ -150,7 +150,7 @@ namespace ControleEstofaria.Orm.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("ValorServico")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

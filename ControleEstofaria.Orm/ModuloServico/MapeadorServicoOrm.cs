@@ -16,10 +16,10 @@ namespace ControleEstofaria.Orm.ModuloServico
             builder.ToTable("TBServico");
             builder.Property(x => x.Id).ValueGeneratedNever();
             builder.Property(x => x.NomeServico).HasColumnType("varchar(200)").IsRequired();
-            builder.Property(x => x.Descricao).HasColumnType("varchar(200)").IsRequired();
+            builder.Property(x => x.Descricao).HasColumnType("varchar(2000)").IsRequired();
             builder.Property(x => x.DataEntradaServico).IsRequired();
-            builder.Property(x => x.DataSaidaServico).IsRequired();// remover o IS REQUIRED
-            builder.Property(x => x.ValorServico).HasColumnType("decimal(10, 2)").IsRequired();
+            builder.Property(x => x.DataSaidaServico);
+            builder.Property(x => x.ValorServico).IsRequired();
             builder.Property(x => x.FormaPagamento).HasConversion<int>().IsRequired();
             builder.Property(x => x.StatusServico).HasConversion<int>().IsRequired();
 

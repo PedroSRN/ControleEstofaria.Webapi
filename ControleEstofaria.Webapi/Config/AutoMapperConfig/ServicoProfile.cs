@@ -27,7 +27,7 @@ namespace ControleEstofaria.Webapi.Config.AutoMapperConfig
                 .ForMember(d => d.FormaPagamento, opt => opt.MapFrom(o => o.FormaPagamento.GetDescription()))
                 .ForMember(d => d.StatusServico, opt => opt.MapFrom(o => o.StatusServico.GetDescription()));
 
-            CreateMap<FormsServicoViewModel, Servico>();
+            CreateMap<Servico, FormsServicoViewModel>();
 
 
 
