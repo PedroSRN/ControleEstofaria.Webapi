@@ -54,7 +54,7 @@ namespace ControleEstofaria.Webapi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Teste_ControleDeCinema v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ControleEstofaria.Webapi v1"));
             }
 
 

@@ -13,7 +13,7 @@ namespace ControleEstofaria.Webapi
         ConfiguracaoLogsControleEstofaria.ConfigurarEscritaLogs();
 
 
-        Log.Logger.Information("Iniciando o servidor da aplicação Controle de Cinema...");
+        Log.Logger.Information("Iniciando o servidor da aplicação Controle de Estofaria...");
 
         try
         {
@@ -25,7 +25,7 @@ namespace ControleEstofaria.Webapi
 
                 var db = services.GetRequiredService<ControleEstofariaDbContext>();
 
-                Log.Logger.Information("Atualizando a banco de dados do Controle de Cinema...");
+                Log.Logger.Information("Atualizando a banco de dados do Controle de Estofaria...");
 
                 var migracaoRealizada = MigradorBancoDadosControleEstofaria.AtualizarBancoDados(db);
 
@@ -35,13 +35,13 @@ namespace ControleEstofaria.Webapi
                     Log.Logger.Information("Nenhuma migração pendente");
             }
 
-            Log.Logger.Information("Iniciando o servidor da aplicação Controle de Cinema...");
+            Log.Logger.Information("Iniciando o servidor da aplicação Controle de Estofaria...");
 
             app.Run();
         }
         catch (Exception exc)
         {
-            Log.Logger.Fatal(exc, "O servidor da aplicação Controle de Cinema parou inesperadamente.");
+            Log.Logger.Fatal(exc, "O servidor da aplicação Controle de Estofaria parou inesperadamente.");
 
         }
     }
