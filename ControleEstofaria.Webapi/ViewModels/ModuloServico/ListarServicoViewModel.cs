@@ -15,7 +15,7 @@ namespace ControleEstofaria.Webapi.ViewModels.ModuloServico
 
         public string DataSaidaServico { get; set; }
 
-        public string ValorServico { get; set; }
+        public decimal ValorServico { get; set; }
 
         public string FormaPagamento { get; set; }
 

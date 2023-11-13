@@ -16,7 +16,7 @@ namespace ControleEstofaria.Webapi.ViewModels.ModuloServico
         [Required(ErrorMessage = "O campo '{0}' é obrigatório")]
         public DateTime DataEntradaServico { get; set; }
 
-        [Required(ErrorMessage = "O campo '{0}' é obrigatório")]
+        //[Required(ErrorMessage = "O campo '{0}' é obrigatório")]  /////////////////////////////////////////////////////////////////////////////////
         public DateTime DataSaidaServico { get; set; }
 
         [Required(ErrorMessage = "O campo '{0}' é obrigatório")]
