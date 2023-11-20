@@ -20,10 +20,12 @@ namespace ControleEstofaria.Dominio.ModuloServico
 
             RuleFor(x => x.DataEntradaServico)
                 .NotNull();
+                //.GreaterThanOrEqualTo((x) => DateTime.Today.Date).WithMessage("A data de entrada deve ser superior ou igual a data atual.");
 
-            RuleFor(x => x.DataSaidaServico)
-               .NotNull()
-               .GreaterThanOrEqualTo((x) => DateTime.Now.Date).WithMessage("A data deve ser superior ou igual a data atual.");
+            //RuleFor(x => x.DataSaidaServico)
+            //    .GreaterThanOrEqualTo(x => x.DataEntradaServico)
+            //    .WithMessage("A data de saída deve ser superior ou igual a data de entrada");
+
 
             RuleFor(x => x.ValorServico) 
                 .GreaterThan(1)
