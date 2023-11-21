@@ -9,6 +9,6 @@ namespace ControleEstofaria.Dominio.ModuloServico
 {
     public interface IRepositorioServico : IRepositorio<Servico>
     {
-
+       List<Servico> SelecionarServicosProntos();
     }
 }

@@ -38,6 +38,21 @@ namespace ControleEstofaria.Webapi.Controllers
             });
         }
 
+        [HttpGet("Selecionar-Servicos-Prontos")]
+        public ActionResult<List<ListarServicoViewModel>> SelecionarServicosProntos()
+        {
+            var servicoResult = servicoServico.SelecionarServicosProntos();
+
+            if (servicoResult.IsFailed)
+                return InternalError(servicoResult);
+
+            return Ok(new
+            {
+                sucesso = true,
+                dados = mapeadorServico.Map<List<ListarServicoViewModel>>(servicoResult.Value)
+            });
+        }
+
 
         [HttpGet("Visualizacao-completa/{id:guid}")]
         public ActionResult<VisualizarServicoViewModel> SelecionarServicoCompleto(Guid id)

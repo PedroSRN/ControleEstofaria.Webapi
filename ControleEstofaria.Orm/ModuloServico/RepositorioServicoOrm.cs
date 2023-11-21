@@ -24,11 +24,21 @@ namespace ControleEstofaria.Orm.ModuloServico
                 .SingleOrDefault(x => x.Id == id);
         }
 
+        public List<Servico> SelecionarServicosProntos()
+        {
+            return registros
+                .Where(x => x.StatusServico == StatusServicoEnum.Pronto)
+                .Include(x => x.Cliente)
+                .ToList();
+        }
+
         public override List<Servico> SelecionarTodos()
         {
             return registros
                 .Include(x => x.Cliente)
                 .ToList();
         }
+
+       
     }
 }

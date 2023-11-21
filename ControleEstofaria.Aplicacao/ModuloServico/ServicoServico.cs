@@ -149,6 +149,30 @@ namespace ControleEstofaria.Aplicacao.ModuloServico
 
         }
 
+        public Result<List<Servico>> SelecionarServicosProntos()
+        {
+            Log.Logger.Debug("Tentando selecionar serviços prontos...");
+
+            try
+            {
+                var servicos = repositorioServico.SelecionarServicosProntos();
+
+                Log.Logger.Information("Servicos prontos selecionados com sucesso");
+
+                return Result.Ok(servicos);
+            }
+            catch (Exception ex)
+            {
+                string msgErro = "Falha no sistema ao tentar selecionar todos os Serviços Prontos";
+
+                Log.Logger.Error(ex, msgErro);
+
+                return Result.Fail(msgErro);
+            }
+
+        }
+
+
         public Result<Servico> SelecionarPorId(Guid id)
         {
             Log.Logger.Debug("Tentando selecionar serviço {ServiçoId}...", id);
