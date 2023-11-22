@@ -149,29 +149,28 @@ namespace ControleEstofaria.Aplicacao.ModuloServico
 
         }
 
-        public Result<List<Servico>> SelecionarServicosProntos()
+
+        public Result<decimal> SomarServicosProntosPorPeriodo(DateTime dataInicio, DateTime dataFim)
         {
-            Log.Logger.Debug("Tentando selecionar serviços prontos...");
+            Log.Logger.Debug("Tentando somar serviços prontos no período...");
 
             try
             {
-                var servicos = repositorioServico.SelecionarServicosProntos();
+                var servicos = repositorioServico.SomarValorServicosProntosNoPeriodo(dataInicio, dataFim);
 
-                Log.Logger.Information("Servicos prontos selecionados com sucesso");
+                Log.Logger.Information("Serviços prontos no período somados com sucesso");
 
-                return Result.Ok(servicos);
+                return servicos;
             }
             catch (Exception ex)
             {
-                string msgErro = "Falha no sistema ao tentar selecionar todos os Serviços Prontos";
+                string msgErro = "Falha no sistema ao tentar somar os Serviços Prontos no período";
 
                 Log.Logger.Error(ex, msgErro);
 
                 return Result.Fail(msgErro);
             }
-
         }
-
 
         public Result<Servico> SelecionarPorId(Guid id)
         {
@@ -202,25 +201,71 @@ namespace ControleEstofaria.Aplicacao.ModuloServico
             }
         }
 
-       /* protected override Result Validar(Servico arg)
+        public Result<List<Servico>> SelecionarServicosProntos()
         {
-            var validador = new ValidadorServico();
+            Log.Logger.Debug("Tentando selecionar serviços prontos...");
 
-            var resultadoValidacao = validador.Validate(arg);
+            try
+            {
+                var servicos = repositorioServico.SelecionarServicosProntos();
 
-            List<Error> erros = new List<Error>();
+                Log.Logger.Information("Servicos prontos selecionados com sucesso");
 
-            foreach (ValidationFailure item in resultadoValidacao.Errors)
-                erros.Add(new Error(item.ErrorMessage));
+                return Result.Ok(servicos);
+            }
+            catch (Exception ex)
+            {
+                string msgErro = "Falha no sistema ao tentar selecionar todos os Serviços Prontos";
 
-            if (NomeFilmeDuplicado(arg))
-                erros.Add(new Error(""));
+                Log.Logger.Error(ex, msgErro);
 
-            if (erros.Any())
-                return Result.Fail(erros);
+                return Result.Fail(msgErro);
+            }
 
-            return Result.Ok();
         }
-       */
+        public Result<List<Servico>> SelecionarServicosProntosPorPeriodo(DateTime dataInicio, DateTime dataFim)
+        {
+            Log.Logger.Debug("Tentando selecionar serviços prontos no período...");
+
+            try
+            {
+                var servicos = repositorioServico.SelecionarServicosProntosNoPeriodo(dataInicio, dataFim);
+                repositorioServico.SomarValorServicosProntosNoPeriodo(dataInicio, dataFim);
+
+                Log.Logger.Information("Serviços prontos no período selecionados com sucesso");
+
+                return Result.Ok(servicos);
+            }
+            catch (Exception ex)
+            {
+                string msgErro = "Falha no sistema ao tentar selecionar os Serviços Prontos no período";
+
+                Log.Logger.Error(ex, msgErro);
+
+                return Result.Fail(msgErro);
+            }
+        }
+
+
+        /* protected override Result Validar(Servico arg)
+         {
+             var validador = new ValidadorServico();
+
+             var resultadoValidacao = validador.Validate(arg);
+
+             List<Error> erros = new List<Error>();
+
+             foreach (ValidationFailure item in resultadoValidacao.Errors)
+                 erros.Add(new Error(item.ErrorMessage));
+
+             if (NomeFilmeDuplicado(arg))
+                 erros.Add(new Error(""));
+
+             if (erros.Any())
+                 return Result.Fail(erros);
+
+             return Result.Ok();
+         }
+        */
     }
 }
