@@ -10,5 +10,11 @@ namespace ControleEstofaria.Dominio.ModuloServico
     public interface IRepositorioServico : IRepositorio<Servico>
     {
        List<Servico> SelecionarServicosProntos();
+
+        List<Servico> SelecionarServicosProntosNoPeriodo(DateTime dataInicio, DateTime dataFim);
+
+         decimal SomarValorServicosProntosNoPeriodo(DateTime dataInicio, DateTime dataFim);
+
+         decimal ObterTotalValorServicos();
     }
 }

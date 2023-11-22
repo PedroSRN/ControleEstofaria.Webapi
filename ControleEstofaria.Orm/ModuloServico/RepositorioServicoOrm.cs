@@ -24,6 +24,14 @@ namespace ControleEstofaria.Orm.ModuloServico
                 .SingleOrDefault(x => x.Id == id);
         }
 
+        public override List<Servico> SelecionarTodos()
+        {
+            return registros
+                .Include(x => x.Cliente)
+                .ToList();
+        }
+
+        /// select para manipular serviços prontos
         public List<Servico> SelecionarServicosProntos()
         {
             return registros
@@ -32,13 +40,36 @@ namespace ControleEstofaria.Orm.ModuloServico
                 .ToList();
         }
 
-        public override List<Servico> SelecionarTodos()
+        public List<Servico> SelecionarServicosProntosNoPeriodo(DateTime dataInicio, DateTime dataFim)
         {
             return registros
+                .Where(x => x.StatusServico == StatusServicoEnum.Pronto &&
+                    x.DataSaidaServico >= dataInicio &&
+                    x.DataSaidaServico <= dataFim)
                 .Include(x => x.Cliente)
                 .ToList();
+            
+
         }
 
-       
+        private decimal _totalValorServicos; // Variável para armazenar o valor somado
+
+        public decimal SomarValorServicosProntosNoPeriodo(DateTime dataInicio, DateTime dataFim)
+        {
+            _totalValorServicos = registros
+                .Where(x => x.StatusServico == StatusServicoEnum.Pronto &&
+                    x.DataSaidaServico.Date >= dataInicio &&
+                    x.DataSaidaServico.Date <= dataFim)
+                .Sum(x => x.ValorServico);
+
+            return _totalValorServicos;
+        }
+
+        public decimal ObterTotalValorServicos()
+        {
+            return _totalValorServicos;
+        }
+
+
     }
 }
