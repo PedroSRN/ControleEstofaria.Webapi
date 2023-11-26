@@ -54,22 +54,20 @@ namespace ControleEstofaria.Webapi.Controllers
         }
 
 
-        //[HttpGet("Selecionar-Servicos-Prontos-Por-Periodo")]
-        //public ActionResult<List<ListarServicoViewModel>> SelecionarServicosProntosPorPeriodo(DateTime dataInicio, DateTime dataFim)
-        //{
-        //    var servicoResult = servicoServico.SelecionarServicosProntosPorPeriodo(dataInicio, dataFim);
-        //    var ValorServicosProntos = servicoServico.repositorioServico.ObterTotalValorServicos();
+        [HttpGet("Selecionar-Servicos-Prontos-Por-Periodo")]
+        public ActionResult<List<ListarServicoViewModel>> SelecionarServicosProntosPorPeriodo(DateTime dataInicio, DateTime dataFim)
+        {
+            var servicoResult = servicoServico.SelecionarServicosProntosPorPeriodo(dataInicio, dataFim);
 
-        //    if (servicoResult.IsFailed)
-        //        return InternalError(servicoResult);
+            if (servicoResult.IsFailed)
+                return InternalError(servicoResult);
 
-        //    return Ok(new
-        //    {
-        //        sucesso = true,
-        //        dados = mapeadorServico.Map<List<ListarServicoViewModel>>(servicoResult.Value),
-        //        ValorServicosProntos
-        //    }) ;
-        //}
+            return Ok(new
+            {
+                sucesso = true,
+                dados = mapeadorServico.Map<List<ListarServicoViewModel>>(servicoResult.Value)
+            });
+        }
 
         [HttpGet("Somar-Servicos-Prontos-Por-Periodo")]
         public ActionResult<decimal> SomarServicosProntosPorPeriodo(DateTime dataInicio, DateTime dataFim)
@@ -78,6 +76,9 @@ namespace ControleEstofaria.Webapi.Controllers
 
             if (servicoResult.IsFailed)
                 return InternalError(servicoResult);
+
+            //if (servicoResult.Value == 0 && DataNaoEncontrada(servicoResult))
+            //    return InternalError(servicoResult);
 
             return servicoResult.Value;
            
