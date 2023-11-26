@@ -77,9 +77,6 @@ namespace ControleEstofaria.Webapi.Controllers
             if (servicoResult.IsFailed)
                 return InternalError(servicoResult);
 
-            //if (servicoResult.Value == 0 && DataNaoEncontrada(servicoResult))
-            //    return InternalError(servicoResult);
-
             return servicoResult.Value;
            
         }
