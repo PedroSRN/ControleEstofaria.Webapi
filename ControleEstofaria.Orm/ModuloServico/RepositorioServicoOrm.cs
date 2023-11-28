@@ -44,8 +44,8 @@ namespace ControleEstofaria.Orm.ModuloServico
         {
             return registros
                 .Where(x => x.StatusServico == StatusServicoEnum.Pronto &&
-                    x.DataSaidaServico >= dataInicio &&
-                    x.DataSaidaServico <= dataFim)
+                    x.DataSaidaServico.Date >= dataInicio.Date &&
+                    x.DataSaidaServico.Date <= dataFim.Date) 
                 .Include(x => x.Cliente)
                 .ToList();
             
@@ -58,8 +58,8 @@ namespace ControleEstofaria.Orm.ModuloServico
         {
             _totalValorServicos = registros
                 .Where(x => x.StatusServico == StatusServicoEnum.Pronto &&
-                    x.DataSaidaServico.Date >= dataInicio &&
-                    x.DataSaidaServico.Date <= dataFim)
+                    x.DataSaidaServico.Date >= dataInicio.Date &&
+                    x.DataSaidaServico.Date <= dataFim.Date)
                 .Sum(x => x.ValorServico);
 
             return _totalValorServicos;

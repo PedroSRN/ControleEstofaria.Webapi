@@ -71,6 +71,11 @@ namespace ControleEstofaria.Webapi.Controllers.Compartilhado
             return registroResult.Errors.Any(x => x.Message.Contains("não encontrado"));
         }
 
+        protected static bool DataNaoEncontrada<T>(Result<T> registroResult)
+        {
+            return registroResult.Errors.Any(x => x.Message.Contains("Sem serviços no período informado."));
+        }
+
         private bool EstaAutenticado()
         {
             if (Request?.HttpContext?.User.Identity != null)
