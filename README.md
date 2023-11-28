@@ -3,7 +3,7 @@
 Este projeto foi gerado com C#
 
 # Para o Back-End: 
-- Abra o terminal e insira o comando “cd .\Teste_ControleDeCinema\” para selecionar o projeto da API;
+- Abra o terminal e insira o comando “cd .\ControleEstofaria.webapi\” para selecionar o projeto da API;
 - Em seguida para colocá-lo em execução, novamente no terminal digite o comando “dotnet run” e a API começará a executar;
 
 # Sobre a aplicação:
